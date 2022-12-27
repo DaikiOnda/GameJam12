@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+public class RequestNum : MonoBehaviour
 {
-    private Text timeText = null;
-    private int month=4;
-    private int days=1;
+    private Text requestText = null;
     // Start is called before the first frame update
     void Start()
     {
-        timeText = GetComponent<Text>();
+        requestText = GetComponent<Text>();
         if (GManager.instance != null)
         {
-            timeText.text = month+"月"+days+"日";
+            requestText.text = "依頼数 "+GManager.instance.request+"/"+GManager.instance.requestlimit;
         }
         else
         {
@@ -24,12 +22,6 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        month=((GManager.instance.time+6)%24+2)/2;
-        /*if((GManager.instance.time+8)%24==0){
-
-        }
-        else */if(GManager.instance.time%2==0)days=1;
-        else days=15;
-        timeText.text = month+"月"+days+"日";
+        requestText.text = "依頼数 "+GManager.instance.request+"/"+GManager.instance.requestlimit;
     }
 }

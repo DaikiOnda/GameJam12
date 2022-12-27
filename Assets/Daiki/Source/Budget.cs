@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+public class Budget : MonoBehaviour
 {
-    private Text timeText = null;
-    private int month=4;
-    private int days=1;
+    private Text budgetText = null;
+    private int oku=0;
+    private int man=1000;
     // Start is called before the first frame update
     void Start()
     {
-        timeText = GetComponent<Text>();
+        budgetText = GetComponent<Text>();
         if (GManager.instance != null)
         {
-            timeText.text = month+"月"+days+"日";
+            budgetText.text = "予算 "+man+"万";
         }
         else
         {
@@ -24,12 +24,9 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        month=((GManager.instance.time+6)%24+2)/2;
-        /*if((GManager.instance.time+8)%24==0){
-
-        }
-        else */if(GManager.instance.time%2==0)days=1;
-        else days=15;
-        timeText.text = month+"月"+days+"日";
+        oku=GManager.instance.budget/10000;
+        man=GManager.instance.budget%10000;
+        if(oku>0)   budgetText.text = "予算 "+oku+"億"+man+"万";
+        else   budgetText.text = "予算 "+man+"万";
     }
 }
