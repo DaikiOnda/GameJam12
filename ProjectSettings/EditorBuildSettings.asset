@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Yusuke/StartScene.unity
+    path: Assets/Yusuke/Start/StartScene.unity
     guid: 3d1de43069221d9459bd372acc1f3156
   - enabled: 1
     path: Assets/Daiki/Scenes/Game.unity
     guid: c1d7b5e488aa08f43a87ac3ce0fe0d93
+  - enabled: 1
+    path: Assets/Yusuke/Result/ResultScene.unity
+    guid: 5d6497f80daba2143ab08e766147d95f
   m_configObjects: {}
