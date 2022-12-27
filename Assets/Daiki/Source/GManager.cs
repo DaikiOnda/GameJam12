@@ -10,10 +10,15 @@ public class GManager : MonoBehaviour
     public int request=0;
     public int requestlimit=1;
     public int budget=1000;
+    public int profit;
+    public int create_req;
+    public int[] scale={0,0,0,0};
+    public int[] deadline={0,0,0,0};
     public bool[] black={};
     public struct CompanyStatus{
         public int cId;
         public bool black;
+        public int timer;
         public int Mlimit;
         public int Tlimit;
         public int Dlimit;
@@ -21,28 +26,25 @@ public class GManager : MonoBehaviour
         public int Tcorrection;
         public int Dcorrection;
     
-        public CompanyStatus(int p1, bool p2,int p3,int p4,int p5,int p6,int p7,int p8)
+        public CompanyStatus(int p1, bool p2,int p3,int p4,int p5,int p6,int p7,int p8,int p9)
         {
             this.cId = p1;
             this.black = p2;
-            this.Mlimit = p3;
-            this.Tlimit = p4;
-            this.Dlimit = p5;
-            this.Mcorrection = p6;
-            this.Tcorrection = p7;
-            this.Dcorrection = p8;
+            this.timer = p3;
+            this.Mlimit = p4;
+            this.Tlimit = p5;
+            this.Dlimit = p6;
+            this.Mcorrection = p7;
+            this.Tcorrection = p8;
+            this.Dcorrection = p9;
         }
     }
     private CompanyStatus[] coList = {
-            new CompanyStatus(0,false,10,1,3,-10,1,2),
-            new CompanyStatus(1,false,10,1,3,-10,1,2),
-            new CompanyStatus(2,false,10,1,3,-10,1,2),
-            new CompanyStatus(3,false,10,1,3,-10,1,2),
-            new CompanyStatus(4,false,10,1,3,-10,1,2),
-            new CompanyStatus(5,false,10,1,3,-10,1,2),
-            new CompanyStatus(6,false,10,1,3,-10,1,2),
-            new CompanyStatus(7,false,10,1,3,-10,1,2),
-            new CompanyStatus(-1,false,0,0,0,0,0,0)    // -1は、終端の意味として使う
+            new CompanyStatus(0,true,0,10,1,2,100,1,3),
+            new CompanyStatus(1,false,0,10,1,3,100,1,3),
+            new CompanyStatus(2,false,0,10,1,4,100,1,1),
+            new CompanyStatus(3,false,0,10,1,3,100,1,2),
+            new CompanyStatus(-1,false,0,0,0,0,0,0,0)    // -1は、終端の意味として使う
     };
 
     private void Awake()
