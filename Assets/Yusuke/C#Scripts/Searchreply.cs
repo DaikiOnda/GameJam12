@@ -1,14 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
- 
-public class GetClickedGameObject : MonoBehaviour {
- 
-    GameObject clickedGameObject;
-    public GameObject panel;
-    bool Waittime = false;//Buttonを押すまでUpdateの中身の挙動を止める
-    void Update () {
-        if(Waittime == false){
- 
-        if (Input.GetMouseButtonDown(0)) {//オブジェクトがクリックされたときこの中が実行される
+
+public class Searchreply : MonoBehaviour
+{
+GameObject clickedGameObject;
+public GameObject panel;
+bool Waittime = false;//Buttonを押すまでUpdateの中身の挙動を止める
+    // Update is called once per frame
+    void Update()
+    {
+     if(Waittime == false){
+    if (Input.GetMouseButtonDown(0)) {//オブジェクトがクリックされたときこの中が実行される
  
             clickedGameObject = null;
  
@@ -18,24 +21,26 @@ public class GetClickedGameObject : MonoBehaviour {
             if (Physics.Raycast(ray, out hit)) {
                 clickedGameObject = hit.collider.gameObject;//クリックされたオブジェクトを代入
             }
+           
+            
             panel.SetActive(true);
             Debug.Log(clickedGameObject);
-            Waittime = true;
+            Waittime=true;
         }
         
         }
         if(Input.GetKey(KeyCode.Escape)){//escキーが押されたときに、Panel画面を元に戻す
-             panel.SetActive(false);
-            Waittime=false;
+         panel.SetActive(false);
+         Waittime=false;
         }
-        
     }
-      public void OnClick()
+    public void OnClick()
     {
          //クリックされたオブジェクトの看板を上げる
             GameObject childObject = clickedGameObject.transform.Find("sign").gameObject;
-            childObject.transform.position = new Vector3(0, -500, 0);
+            childObject.transform.position = new Vector3(0, 0, 0);
             panel.SetActive(false);
             Waittime=false;
     }
+    
 }
