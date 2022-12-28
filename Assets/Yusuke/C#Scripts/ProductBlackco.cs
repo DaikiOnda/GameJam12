@@ -5,20 +5,16 @@ using UnityEngine;
 
 public class ProductBlackco : MonoBehaviour //CompanyinfoからCo1～Co４までのboolの値を持ってくる
 {
-[SerializeField] int Days = 365;//4箇所すべてがブラック企業になるまでの日数
-[SerializeField] int Duringproduct = 30;//ブラック企業がランダムで増えるまでの日数
-[SerializeField] int BlackCo =1;//ブラック企業の会社の数を代入
-public GameObject sp;
-Companyinfo com;
+public int Days = 0;//4箇所すべてがブラック企業になるまでの日数
+public int Duringproduct = 0;//ブラック企業がランダムで増えるまでの日数
+public int BlackCo =0;//ブラック企業の会社の数を代入
+public bool ResultTurnbool=false;//結果のターンが来た時にtrue
+public bool AfterresultReset=false;//結果のターンが終わった後に、ブラック企業のカウントを初期化
+public Companyinfo com;
 
-    // Update is called once per frame
-    void Start()
+void Update()
     {
-    com = sp.GetComponent<Companyinfo>(); 
-    }
-    void Update()
-    {
-        if(Days>=360)//30日が過ぎて、なかにBlack企業がいるかどうか
+        if(Days>=365)//365日が過ぎて、なかにBlack企業がいるかどうか
         {
             if(BlackCo >= 1)//もしブラック企業が１つ以上でもあれば、その範囲の会社はすべてBlackになる
             {
@@ -27,10 +23,13 @@ Companyinfo com;
             
             Days = 0;//日数を戻す
         }
-        if(Duringproduct>=30)
-        {
+
+
+
+    if(Duringproduct>=30)
+    {
         int rnd = Random.Range(1, 5);　// ※ 1～4の範囲でランダムな整数値が返る
-        switch(rnd) {
+    switch(rnd) {
         case 1:
             com.Co[0]=false;
             break;
@@ -43,7 +42,26 @@ Companyinfo com;
         case 4:
             com.Co[3]=false;
             break;
-}             }Duringproduct=0;
-        }
-    
+             }Duringproduct=0;
     }
+
+
+        if(ResultTurnbool==true){//結果ターンが来た時に、ブラック企業の数を確認
+            for(int i=0;i<4;i++)
+            {
+                if(com.Co[i]==false)
+                {
+                    BlackCo++;
+                }else{
+                    if(BlackCo>0) BlackCo--;
+                }
+            }
+            ResultTurnbool=false;//実行後はfalse
+        }
+        if(AfterresultReset==true)
+        {
+            BlackCo=0;
+            AfterresultReset=false;//実行後はfalse
+        }
+        
+ }}

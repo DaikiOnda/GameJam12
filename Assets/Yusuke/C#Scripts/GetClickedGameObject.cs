@@ -1,10 +1,12 @@
 using UnityEngine;
- 
+using UnityEngine.UI;
 public class GetClickedGameObject : MonoBehaviour {
  
     GameObject clickedGameObject;
     public GameObject panel;
+    public GameObject reaction;
     bool Waittime = false;//Buttonを押すまでUpdateの中身の挙動を止める
+    public Text text;
     void Update () {
         if(Waittime == false){
  
@@ -26,6 +28,7 @@ public class GetClickedGameObject : MonoBehaviour {
         }
         if(Input.GetKey(KeyCode.Escape)){//escキーが押されたときに、Panel画面を元に戻す
              panel.SetActive(false);
+             reaction.SetActive(false);
             Waittime=false;
         }
         
@@ -36,6 +39,8 @@ public class GetClickedGameObject : MonoBehaviour {
             GameObject childObject = clickedGameObject.transform.Find("sign").gameObject;
             childObject.SetActive(false);
             panel.SetActive(false);
+            reaction.SetActive(true);
+            text.text="この会社は残業代を\n   払っていなかった";
             Waittime=false;
     }
 }

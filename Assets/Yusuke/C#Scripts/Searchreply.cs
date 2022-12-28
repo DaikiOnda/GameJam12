@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class Searchreply : MonoBehaviour
 {
 public Companyinfo com;
 GameObject clickedGameObject;
 public GameObject panel;//Buttonの非表示,表示の区分け
+public GameObject reaction;
+public Text text;
 bool Waittime = false;//Buttonを押すまでUpdateの中身の挙動を止める
     // Update is called once per frame
    
@@ -32,6 +35,7 @@ bool Waittime = false;//Buttonを押すまでUpdateの中身の挙動を止める
         }
         if(Input.GetKey(KeyCode.Escape)){//escキーが押されたときに、Panel画面を元に戻す
          panel.SetActive(false);//Buttonの非表示
+         reaction.SetActive(false);
          Waittime=false;
         }
         }
@@ -45,21 +49,29 @@ bool Waittime = false;//Buttonを押すまでUpdateの中身の挙動を止める
             case "企業1":
                 if(com.Co[0]==false){//もしその会社がブラックだったら看板を出す
                     childObject.SetActive(true);
+                    text.text="この会社はブラック企業だった";
+                    reaction.SetActive(true);
                 }
                 break;
             case "企業2":
                 if(com.Co[1]==false){
                     childObject.SetActive(true);
+                    text.text="この会社はブラック企業だった";
+                    reaction.SetActive(true);
                 }
                 break;
             case "企業3":
                 if(com.Co[2]==false){
                     childObject.SetActive(true);
+                    text.text="この会社はブラック企業だった";
+                    reaction.SetActive(true);
                 }
                 break;
             case "企業4":
                 if(com.Co[3]==false){
                     childObject.SetActive(true);
+                    text.text="この会社はブラック企業だった";
+                    reaction.SetActive(true);
                 }
             break;
           }
