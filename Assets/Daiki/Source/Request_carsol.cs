@@ -7,7 +7,7 @@ public class Request_carsol : MonoBehaviour
     //GameObject型の変数sphereを宣言します。
     public GameObject company;
     public GameObject explain;
-    //Searchreply searchreply;
+    Searchreply searchreply;
     private void OnMouseOver()
     {
         Vector3 mousePosition = Input.mousePosition;

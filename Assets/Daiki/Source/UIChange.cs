@@ -13,8 +13,11 @@ public class UIChange : MonoBehaviour
     public GameObject alarmE;
     public GameObject market;
     public GameObject select;
-    //public GameObject searcher;
-    //Searchreply searchreply;
+    public GameObject searcher;
+    Searchreply searchreply;
+    void Start () {
+        searchreply = searcher.GetComponent<Searchreply>();
+    }
     public void RequestUI()
     {
         if(!GManager.instance.request_go){
@@ -35,21 +38,28 @@ public class UIChange : MonoBehaviour
     }
     public void alarmUIclose(){
         alarm.SetActive(false);
+        searchreply.Searchbool=false;
     }
     public void alarmBUIclose(){
         alarmB.SetActive(false);
     }
     public void alarmCUIclose(){
         alarmC.SetActive(false);
+        searchreply.Searchbool=false;
         GManager.instance.alart=false;
+        GManager.instance.company_name="未選択";
     }
     public void alarmDUIclose(){
         alarmD.SetActive(false);
+        searchreply.Searchbool=false;
         GManager.instance.alart=false;
+        GManager.instance.company_name="未選択";
     }
     public void alarmEUIclose(){
         alarmE.SetActive(false);
+        searchreply.Searchbool=false;
         GManager.instance.refuse=0;
+        GManager.instance.company_name="未選択";
     }
     public void requestUIclose(){
         request.SetActive(false);
@@ -61,6 +71,8 @@ public class UIChange : MonoBehaviour
     public void selectUIclose()
     {
         select.SetActive(false);
+        searchreply.Searchbool=false;
+        GManager.instance.company_name="未選択";
         //searchreply.Waittime=false;
     }
 }
