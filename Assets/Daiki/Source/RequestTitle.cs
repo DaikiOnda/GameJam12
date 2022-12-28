@@ -3,27 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RequestBudget : MonoBehaviour
+public class RequestTitle : MonoBehaviour
 {
-    private Text budgetText = null;
-    private int man=50;
+    private Text requestText = null;
     // Start is called before the first frame update
     void Start()
     {
-        budgetText = GetComponent<Text>();
+        requestText = GetComponent<Text>();
         if (GManager.instance != null)
         {
-            budgetText.text =man+"万";
+            requestText.text = "依頼" + (GManager.instance.create_req+1);
         }
         else
         {
             Debug.Log("ゲームマネージャー置き忘れてるよ！");
-            Destroy(this); }
+            Destroy(this); 
+        }
+        
     }
+
     // Update is called once per frame
     void Update()
     {
-        man=GManager.instance.req_budget_lower[GManager.instance.scale[GManager.instance.create_req]];
-        budgetText.text =man+"万";
+        requestText.text = "依頼" + (GManager.instance.create_req+1);
+        
     }
 }
