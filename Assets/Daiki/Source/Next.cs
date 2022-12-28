@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class Next : MonoBehaviour
 {
+    public GameObject  benefit;
     //ボタンを押すと次のターンに
     public void GoNextTurn()
     {
         GManager.instance.turn=(GManager.instance.turn+1)%4;
+        benefit.SetActive(false);
         if(GManager.instance.turn==0){
             GManager.instance.time=(GManager.instance.time+1)%24;
             //毎月1日に利益の獲得
-            if(GManager.instance.time%2==0)GManager.instance.budget+=GManager.instance.profit;
+            if(GManager.instance.time%2==0){
+                benefit.SetActive(true);
+                GManager.instance.budget+=GManager.instance.profit;
+            }
+            else    GManager.instance.turn=(GManager.instance.turn+1)%4;
         }
 
     }
@@ -21,6 +27,8 @@ public class Next : MonoBehaviour
         GManager.instance.turn=0;
         GManager.instance.time=(GManager.instance.time+1)%24;
         //毎月1日に利益の獲得
-        if(GManager.instance.time%2==0)GManager.instance.budget+=GManager.instance.profit;
+        if(GManager.instance.time%2==0){
+            GManager.instance.budget+=GManager.instance.profit;
+        }
     }
 }

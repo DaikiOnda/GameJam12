@@ -13,7 +13,7 @@ public class Turn : MonoBehaviour
         turnText = GetComponent<Text>();
         if (GManager.instance != null)
         {
-            turnText.text = "強化";
+            turnText.text = "説明";
         }
         else
         {
@@ -23,7 +23,7 @@ public class Turn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GManager.instance.turn==0)turnText.text = "強化";
+        if (GManager.instance.turn==0)turnText.text = "収入";
         else if (GManager.instance.turn==1)turnText.text = "依頼";
         else if (GManager.instance.turn==2)turnText.text = "調査";
         else turnText.text = "結果";
