@@ -6,11 +6,11 @@ public class Searchreply : MonoBehaviour
 {
 public Companyinfo com;
 GameObject clickedGameObject;
-public GameObject panel;//Button‚Ì”ñ•\¦,•\¦‚Ì‹æ•ª‚¯
+public GameObject panel;//Buttonï¿½Ì”ï¿½\ï¿½ï¿½,ï¿½\ï¿½ï¿½ï¿½Ì‹æ•ªï¿½ï¿½
 public GameObject reaction;
 public Text text;
 public bool Searchbool=false;//if this bool is true,you can get Update method
-bool Waittime = false;//Button‚ğ‰Ÿ‚·‚Ü‚ÅUpdate‚Ì’†g‚Ì‹““®‚ğ~‚ß‚é
+public bool Waittime = false;//Buttonï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½Updateï¿½Ì’ï¿½ï¿½gï¿½Ì‹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½ß‚ï¿½
     // Update is called once per frame
    
 void Update()
@@ -20,7 +20,7 @@ void Update()
         if(Waittime == false)
         {
            if (Input.GetMouseButtonDown(0)) 
-           {//ƒIƒuƒWƒFƒNƒg‚ªƒNƒŠƒbƒN‚³‚ê‚½‚Æ‚«‚±‚Ì’†‚ªÀs‚³‚ê‚é
+           {//ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ê‚½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½Ì’ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½
  
                 clickedGameObject = null;
  
@@ -29,55 +29,55 @@ void Update()
  
                 if (Physics.Raycast(ray, out hit)) 
                 {
-                    clickedGameObject = hit.collider.gameObject;//ƒNƒŠƒbƒN‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚ğ‘ã“ü
+                    clickedGameObject = hit.collider.gameObject;//ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ê‚½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½
                 }
            
-               panel.SetActive(true);//Button‚Ì•\¦
+               panel.SetActive(true);//Buttonï¿½Ì•\ï¿½ï¿½
                Debug.Log(clickedGameObject);
                Waittime=true;
                 
             }
         }
             if(Input.GetKey(KeyCode.Escape))
-            {   //escƒL[‚ª‰Ÿ‚³‚ê‚½‚Æ‚«‚ÉAPanel‰æ–Ê‚ğŒ³‚É–ß‚·
-                panel.SetActive(false);//Button‚Ì”ñ•\¦
+            {   //escï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Æ‚ï¿½ï¿½ÉAPanelï¿½ï¿½Ê‚ï¿½ï¿½ï¿½ï¿½É–ß‚ï¿½
+                panel.SetActive(false);//Buttonï¿½Ì”ï¿½\ï¿½ï¿½
                 reaction.SetActive(false);
                 Waittime=false;
             }
     }
 }
     
-    public void OnClickSearch()//’²¸Button‚ª‰Ÿ‚³‚ê‚½‚Æ‚«
+    public void OnClickSearch()//ï¿½ï¿½ï¿½ï¿½Buttonï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Æ‚ï¿½
     {
-         //ƒNƒŠƒbƒN‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚ÌŠÅ”Â‚ğã‚°‚é
+         //ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ê‚½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌŠÅ”Â‚ï¿½ï¿½ã‚°ï¿½ï¿½
           GameObject childObject = clickedGameObject.transform.Find("sign").gameObject;
           switch(clickedGameObject.name)
-          {//ƒNƒŠƒbƒN‚³‚ê‚½Œš•¨‚Ì–¼‘O‚ª‚Ç‚ê‚É“–‚½‚é‚©‚Ì‘I•Ê
-            case "Šé‹Æ1":
-                if(com.Co[0]==false){//‚à‚µ‚»‚Ì‰ïĞ‚ªƒuƒ‰ƒbƒN‚¾‚Á‚½‚çŠÅ”Â‚ğo‚·
+          {//ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½ï¿½ï¿½Ì–ï¿½ï¿½Oï¿½ï¿½ï¿½Ç‚ï¿½É“ï¿½ï¿½ï¿½ï¿½é‚©ï¿½Ì‘Iï¿½ï¿½
+            case "ï¿½ï¿½ï¿½1":
+                if(com.Co[0]==false){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‰ï¿½Ğ‚ï¿½ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å”Â‚ï¿½ï¿½oï¿½ï¿½
                     childObject.SetActive(true);
-                    text.text="‚±‚Ì‰ïĞ‚Íƒuƒ‰ƒbƒNŠé‹Æ‚¾‚Á‚½";
+                    text.text="ï¿½ï¿½ï¿½Ì‰ï¿½Ğ‚Íƒuï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ï¿½";
                     reaction.SetActive(true);
                 }
                 break;
-            case "Šé‹Æ2":
+            case "ï¿½ï¿½ï¿½2":
                 if(com.Co[1]==false){
                     childObject.SetActive(true);
-                    text.text="‚±‚Ì‰ïĞ‚Íƒuƒ‰ƒbƒNŠé‹Æ‚¾‚Á‚½";
+                    text.text="ï¿½ï¿½ï¿½Ì‰ï¿½Ğ‚Íƒuï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ï¿½";
                     reaction.SetActive(true);
                 }
                 break;
-            case "Šé‹Æ3":
+            case "ï¿½ï¿½ï¿½3":
                 if(com.Co[2]==false){
                     childObject.SetActive(true);
-                    text.text="‚±‚Ì‰ïĞ‚Íƒuƒ‰ƒbƒNŠé‹Æ‚¾‚Á‚½";
+                    text.text="ï¿½ï¿½ï¿½Ì‰ï¿½Ğ‚Íƒuï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ï¿½";
                     reaction.SetActive(true);
                 }
                 break;
-            case "Šé‹Æ4":
+            case "ï¿½ï¿½ï¿½4":
                 if(com.Co[3]==false){
                     childObject.SetActive(true);
-                    text.text="‚±‚Ì‰ïĞ‚Íƒuƒ‰ƒbƒNŠé‹Æ‚¾‚Á‚½";
+                    text.text="ï¿½ï¿½ï¿½Ì‰ï¿½Ğ‚Íƒuï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ï¿½";
                     reaction.SetActive(true);
                 }
             break;
