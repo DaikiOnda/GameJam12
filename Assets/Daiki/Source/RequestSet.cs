@@ -43,7 +43,7 @@ public class RequestSet : MonoBehaviour
                     dropdown.captionText.text = "半月";
                 }
                 else if(scale>0){
-                    dropdown.captionText.text = (scale*2)+ "か月半";
+                    dropdown.captionText.text = (scale*2-1)+ "か月半";
                 }
                 break;
             case 1:
@@ -59,7 +59,7 @@ public class RequestSet : MonoBehaviour
                     dropdown.captionText.text = (1+scale*2)+"か月半";
                 }
                 else if(scale>0){
-                    dropdown.captionText.text = (1+scale*2)+ "か月半";
+                    dropdown.captionText.text = (scale*2)+ "か月半";
                 }
                 break;
             case 3:
@@ -75,7 +75,7 @@ public class RequestSet : MonoBehaviour
                     dropdown.captionText.text = (2+scale*2)+"か月半";
                 }
                 else if(scale>0){
-                    dropdown.captionText.text = (2+scale*2)+ "か月半";
+                    dropdown.captionText.text = (1+scale*2)+ "か月半";
                 }
                 break;
             case 5:

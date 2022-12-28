@@ -20,10 +20,9 @@ public class GManager : MonoBehaviour
     public int[] req_budget_lower={50,200,500,1000,2000};//予算の下限表示用
     public int[] req_market_price={200,500,1000,2000,3000,4000};//相場の値段
     public int[] req_budget_upper={-1,-1,-1,-1};//依頼の予算の上限値を記録する配列
-    public string[] reaction={"規模が大きい","期限が短い","予算が少ない","十分な条件","期限が長い","予算が多い"};
+    public string[] reaction={"規模が大きい","期限が短い","予算が少ない","十分な条件","期限が長い"};
     public int[,] company_reaction={{0,3,3,3},{0,3,3,3},{0,3,3,3},{0,3,3,3}};//各企業の反応を記録する配列{値段(0は依頼の拒否),規模への反応,期限への反応,予算への反応}
-    public int[,] company_status={{2,120},{3,110},{3,130},{4,120}};//規模上限,黒時の予算の補正
-    public bool[] black={};
+    public int[,] company_status={{2,14,1},{3,13,0},{3,15,1},{4,14,2}};//規模上限,黒時の予算の補正,期限下限
     /*public struct CompanyStatus{
         public int cId;
         public bool black;
