@@ -32,9 +32,9 @@ public class GetClickedGameObject : MonoBehaviour {
     }
       public void OnClick()
     {
-         //クリックされたオブジェクトの看板を上げる
+         //クリックされたオブジェクトの看板を下げる
             GameObject childObject = clickedGameObject.transform.Find("sign").gameObject;
-            childObject.SetActive(true);
+            childObject.SetActive(false);
             panel.SetActive(false);
             Waittime=false;
     }
