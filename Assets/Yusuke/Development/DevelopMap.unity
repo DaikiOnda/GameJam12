@@ -1300,6 +1300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 443617655}
   reaction: {fileID: 35909884}
+  Sr: {fileID: 898000923}
   text: {fileID: 55811823}
 --- !u!135 &898000919
 SphereCollider:
@@ -1395,6 +1396,7 @@ MonoBehaviour:
   panel: {fileID: 443617655}
   reaction: {fileID: 35909884}
   text: {fileID: 55811823}
+  Searchbool: 0
 --- !u!1 &1060286823
 GameObject:
   m_ObjectHideFlags: 0

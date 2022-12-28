@@ -9,36 +9,43 @@ GameObject clickedGameObject;
 public GameObject panel;//Buttonの非表示,表示の区分け
 public GameObject reaction;
 public Text text;
+public bool Searchbool=false;//if this bool is true,you can get Update method
 bool Waittime = false;//Buttonを押すまでUpdateの中身の挙動を止める
     // Update is called once per frame
    
-    void Update()
+void Update()
+{
+    if(Searchbool==true)//When turn is Searchturn,this content will be conducted
     {
-     if(Waittime == false){
-    if (Input.GetMouseButtonDown(0)) {//オブジェクトがクリックされたときこの中が実行される
+        if(Waittime == false)
+        {
+           if (Input.GetMouseButtonDown(0)) 
+           {//オブジェクトがクリックされたときこの中が実行される
  
-            clickedGameObject = null;
+                clickedGameObject = null;
  
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit = new RaycastHit();
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit = new RaycastHit();
  
-            if (Physics.Raycast(ray, out hit)) {
-                clickedGameObject = hit.collider.gameObject;//クリックされたオブジェクトを代入
-            }
+                if (Physics.Raycast(ray, out hit)) 
+                {
+                    clickedGameObject = hit.collider.gameObject;//クリックされたオブジェクトを代入
+                }
            
-            
-            panel.SetActive(true);//Buttonの表示
-            Debug.Log(clickedGameObject);
-            Waittime=true;
+               panel.SetActive(true);//Buttonの表示
+               Debug.Log(clickedGameObject);
+               Waittime=true;
+                
+            }
         }
-        
-        }
-        if(Input.GetKey(KeyCode.Escape)){//escキーが押されたときに、Panel画面を元に戻す
-         panel.SetActive(false);//Buttonの非表示
-         reaction.SetActive(false);
-         Waittime=false;
-        }
-        }
+            if(Input.GetKey(KeyCode.Escape))
+            {   //escキーが押されたときに、Panel画面を元に戻す
+                panel.SetActive(false);//Buttonの非表示
+                reaction.SetActive(false);
+                Waittime=false;
+            }
+    }
+}
     
     public void OnClickSearch()//調査Buttonが押されたとき
     {
@@ -76,7 +83,7 @@ bool Waittime = false;//Buttonを押すまでUpdateの中身の挙動を止める
             break;
           }
             
-           panel.SetActive(false);//Buttonの非表示
+           panel.SetActive(false);//Button will be invisible
            Waittime=false;
     }
     
