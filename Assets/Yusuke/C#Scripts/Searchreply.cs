@@ -53,31 +53,31 @@ void Update()
           GameObject childObject = clickedGameObject.transform.Find("sign").gameObject;
           switch(clickedGameObject.name)
           {//�N���b�N���ꂽ�����̖��O���ǂ�ɓ����邩�̑I��
-            case "���1":
+            case "企業1":
                 if(com.Co[0]==false){//�������̉�Ђ��u���b�N��������Ŕ��o��
                     childObject.SetActive(true);
-                    text.text="���̉�Ђ̓u���b�N��Ƃ�����";
+                    //text.text="���̉�Ђ̓u���b�N��Ƃ�����";
                     reaction.SetActive(true);
                 }
                 break;
-            case "���2":
+            case "企業2":
                 if(com.Co[1]==false){
                     childObject.SetActive(true);
-                    text.text="���̉�Ђ̓u���b�N��Ƃ�����";
+                    //text.text="���̉�Ђ̓u���b�N��Ƃ�����";
                     reaction.SetActive(true);
                 }
                 break;
-            case "���3":
+            case "企業3":
                 if(com.Co[2]==false){
                     childObject.SetActive(true);
-                    text.text="���̉�Ђ̓u���b�N��Ƃ�����";
+                    //text.text="���̉�Ђ̓u���b�N��Ƃ�����";
                     reaction.SetActive(true);
                 }
                 break;
-            case "���4":
+            case "企業4":
                 if(com.Co[3]==false){
                     childObject.SetActive(true);
-                    text.text="���̉�Ђ̓u���b�N��Ƃ�����";
+                    //text.text="���̉�Ђ̓u���b�N��Ƃ�����";
                     reaction.SetActive(true);
                 }
             break;

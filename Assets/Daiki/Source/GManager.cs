@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class GManager : MonoBehaviour
 {
+    public string company_name="未選択";
+    public bool alart=false;
+    public bool serect=false;
     public bool[] coBW={true,false,false,true};
+    public bool request_go=false;
     public static GManager instance = null; 
     public int company_amount=0;
     public int turn=0;
     public int time=0;
     public int request=0;
     public int requestlimit=1;
-    public int budget=1000;
+    public int watch=0;
+    public int watchlimit=2;
+    public int budget=1000;//予算
+    public int refuse=0;
     public int profit;
     public int create_req;
     public int[] scale={0,0,0,0};
