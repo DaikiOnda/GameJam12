@@ -20,8 +20,11 @@ public class Create_request : MonoBehaviour
             //相場を代入
             GManager.instance.company_reaction[i,0]=GManager.instance.req_market_price[GManager.instance.scale[GManager.instance.create_req]];
             //規模
-            if((GManager.instance.scale[GManager.instance.create_req]<=GManager.instance.company_status[i,0])||((GManager.instance.coBW[i])&&(GManager.instance.scale[GManager.instance.create_req]<=GManager.instance.company_status[i,0]+1))){
+            if(GManager.instance.scale[GManager.instance.create_req]<=GManager.instance.company_status[i,0]){
                 GManager.instance.company_reaction[i,1]=3;
+            }
+            else if((GManager.instance.coBW[i])&&(GManager.instance.scale[GManager.instance.create_req]<=GManager.instance.company_status[i,0]+1)){
+                GManager.instance.company_reaction[i,1]=0;
             }
             else{
                 GManager.instance.company_reaction[i,1]=0;
@@ -62,6 +65,7 @@ public class Create_request : MonoBehaviour
             Debug.Log("企業4");
             Debug.Log(GManager.instance.company_reaction[3,0]);
             Debug.Log(GManager.instance.reaction[GManager.instance.company_reaction[3,1]]+"で"+GManager.instance.reaction[GManager.instance.company_reaction[3,2]]);
+        GManager.instance.request_go=true;
         request_botton.SetActive(false);
         request.SetActive(false);
     }

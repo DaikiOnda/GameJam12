@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class GManager : MonoBehaviour
 {
+    public string company_name="未選択";
+    public bool alart=false;
     public bool[] coBW={true,false,false,true};
+    public bool request_go=false;
     public static GManager instance = null; 
     public int company_amount=0;
     public int turn=0;

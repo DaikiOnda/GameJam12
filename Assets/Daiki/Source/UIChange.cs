@@ -8,10 +8,18 @@ public class UIChange : MonoBehaviour
     public GameObject  enhancement;
     public GameObject alarm;
     public GameObject alarmB;
+    public GameObject alarmC;
+    public GameObject alarmD;
     public GameObject market;
     public void RequestUI()
     {
-        request.SetActive(true);
+        if(!GManager.instance.request_go){
+            if(GManager.instance.turn==1) request.SetActive(true);
+        }
+        else{
+            alarmC.SetActive(true);
+            GManager.instance.alart=true;
+        } 
     }
     public void EnhancementUI()
     {
@@ -26,6 +34,14 @@ public class UIChange : MonoBehaviour
     }
     public void alarmBUIclose(){
         alarmB.SetActive(false);
+    }
+    public void alarmCUIclose(){
+        alarmC.SetActive(false);
+        GManager.instance.alart=false;
+    }
+    public void alarmDUIclose(){
+        alarmD.SetActive(false);
+        GManager.instance.alart=false;
     }
     public void requestUIclose(){
         request.SetActive(false);
