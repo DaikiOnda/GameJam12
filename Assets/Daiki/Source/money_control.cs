@@ -20,6 +20,7 @@ public class money_control : MonoBehaviour
         panel.SetActive(false);
         GManager.instance.request_go=false;
         searchreply.Waittime=false;
+        GManager.instance.request+=1;
     }
     public void reset(){
         searchreply.Waittime=false;

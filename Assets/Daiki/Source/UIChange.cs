@@ -11,6 +11,8 @@ public class UIChange : MonoBehaviour
     public GameObject alarmC;
     public GameObject alarmD;
     public GameObject alarmE;
+    public GameObject alarmF;
+    public GameObject alarmG;
     public GameObject market;
     public GameObject select;
     public GameObject searcher;
@@ -21,7 +23,13 @@ public class UIChange : MonoBehaviour
     public void RequestUI()
     {
         if(!GManager.instance.request_go){
-            if(GManager.instance.turn==1) request.SetActive(true);
+            
+            if(GManager.instance.turn==1){
+                if(GManager.instance.request<GManager.instance.requestlimit){
+                    request.SetActive(true);
+                }
+                else alarmF.SetActive(true);
+            } 
         }
         else{
             alarmC.SetActive(true);
@@ -61,6 +69,18 @@ public class UIChange : MonoBehaviour
         GManager.instance.refuse=0;
         GManager.instance.company_name="未選択";
     }
+    public void alarmFUIclose(){
+        alarmF.SetActive(false);
+        searchreply.Searchbool=false;
+        GManager.instance.refuse=0;
+        GManager.instance.company_name="未選択";
+    }
+    public void alarmGUIclose(){
+        alarmG.SetActive(false);
+        searchreply.Searchbool=false;
+        GManager.instance.refuse=0;
+        GManager.instance.company_name="未選択";
+    }
     public void requestUIclose(){
         request.SetActive(false);
     }
@@ -74,5 +94,13 @@ public class UIChange : MonoBehaviour
         searchreply.Searchbool=false;
         GManager.instance.company_name="未選択";
         //searchreply.Waittime=false;
+    }
+    public void wathcount(){
+        if(GManager.instance.watch<GManager.instance.watchlimit)GManager.instance.watch++;
+        else{
+            select.SetActive(false);
+            alarmG.SetActive(true);
+            GManager.instance.company_name="未選択";
+        }
     }
 }
