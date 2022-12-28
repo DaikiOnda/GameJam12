@@ -34,7 +34,7 @@ public class GetClickedGameObject : MonoBehaviour {
     {
          //クリックされたオブジェクトの看板を上げる
             GameObject childObject = clickedGameObject.transform.Find("sign").gameObject;
-            childObject.transform.position = new Vector3(0, -500, 0);
+            childObject.SetActive(true);
             panel.SetActive(false);
             Waittime=false;
     }

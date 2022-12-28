@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Companyinfo:MonoBehaviour
+
+public class Companyinfo: MonoBehaviour
 {
 /*
 Še‰ïĞ‚Ìî•ñ
 */
-  public bool Co1 =true;
-  public bool Co2 =true;
-  public bool Co3 =true;
-  public bool Co4 =true;
-
+public bool[] Co = new bool[4];
+	void Start(){
+	for(int i=0;i<4;i++){
+	Co[i]=true;
+	}
+	
+	}
+	
 }
+
