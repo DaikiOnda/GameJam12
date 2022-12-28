@@ -14,6 +14,9 @@ public class GManager : MonoBehaviour
     public int create_req;
     public int[] scale={0,0,0,0};
     public int[] deadline={0,0,0,0};
+    public int[] req_budget_lower={50,200,500,1000,2000};
+    public int[] req_budget_upper={-1,-1,-1,-1};
+    public int[] company_reaction={-1,-1,-1,-1};
     public bool[] black={};
     public struct CompanyStatus{
         public int cId;
