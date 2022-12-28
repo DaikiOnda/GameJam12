@@ -19,16 +19,23 @@ public class RequestSet : MonoBehaviour
         GManager.instance.scale[GManager.instance.create_req]=scale;
         if(scale==0){
             dropdown.options[0].text = "半月";
+            dropdown.options[1].text = (1+scale*2)+"か月";
+            dropdown.options[2].text = (1+scale*2)+"か月半";
+            dropdown.options[3].text = (2+scale*2)+"か月";
+            dropdown.options[4].text = (2+scale*2)+"か月半";
+            dropdown.options[5].text = (3+scale*2)+"か月";
+            dropdown.options[6].text = (3+scale*2)+"か月半";
         }
         else if(scale>0){
-            dropdown.options[0].text =scale*2+ "か月半";
+            dropdown.options[0].text =(scale*2-1)+ "か月半";
+            dropdown.options[1].text = (scale*2)+"か月";
+            dropdown.options[2].text = (scale*2)+"か月半";
+            dropdown.options[3].text = (1+scale*2)+"か月";
+            dropdown.options[4].text = (1+scale*2)+"か月半";
+            dropdown.options[5].text = (2+scale*2)+"か月";
+            dropdown.options[6].text = (2+scale*2)+"か月半";
+            
         }
-        dropdown.options[1].text = (1+scale*2)+"か月";
-        dropdown.options[2].text = (1+scale*2)+"か月半";
-        dropdown.options[3].text = (2+scale*2)+"か月";
-        dropdown.options[4].text = (2+scale*2)+"か月半";
-        dropdown.options[5].text = (3+scale*2)+"か月";
-        dropdown.options[6].text = (3+scale*2)+"か月半";
         switch (dropdown.value)
         {
             case 0:
@@ -36,25 +43,61 @@ public class RequestSet : MonoBehaviour
                     dropdown.captionText.text = "半月";
                 }
                 else if(scale>0){
-                    dropdown.captionText.text =scale*2+ "か月半";
+                    dropdown.captionText.text = (scale*2-1)+ "か月半";
                 }
                 break;
             case 1:
-                dropdown.captionText.text = (1+scale*2)+"か月";
+                if(scale==0){
+                    dropdown.captionText.text =(1+scale*2)+"か月";
+                }
+                else if(scale>0){
+                    dropdown.captionText.text = (scale*2)+ "か月半";
+                }
                 break;
             case 2:
-                dropdown.captionText.text = (1+scale*2)+"か月半";
+                if(scale==0){
+                    dropdown.captionText.text = (1+scale*2)+"か月半";
+                }
+                else if(scale>0){
+                    dropdown.captionText.text = (scale*2)+ "か月半";
+                }
                 break;
             case 3:
-                dropdown.captionText.text = (2+scale*2)+"か月";
+                if(scale==0){
+                    dropdown.captionText.text =(2+scale*2)+"か月";
+                }
+                else if(scale>0){
+                    dropdown.captionText.text = (1+scale*2)+ "か月";
+                }
                 break;
             case 4:
-                dropdown.captionText.text = (2+scale*2)+"か月半";
+                if(scale==0){
+                    dropdown.captionText.text = (2+scale*2)+"か月半";
+                }
+                else if(scale>0){
+                    dropdown.captionText.text = (1+scale*2)+ "か月半";
+                }
+                break;
+            case 5:
+                if(scale==0){
+                    dropdown.captionText.text = (3+scale*2)+"か月";
+                }
+                else if(scale>0){
+                    dropdown.captionText.text = (2+scale*2)+ "か月";
+                }
+                break;
+            case 6:
+                if(scale==0){
+                    dropdown.captionText.text = (3+scale*2)+"か月半";
+                }
+                else if(scale>0){
+                    dropdown.captionText.text = (2+scale*2)+ "か月半";
+                }
                 break;
         }
     }
     public void CallT(int time){
         if(GManager.instance.scale[GManager.instance.create_req]==0)    GManager.instance.deadline[GManager.instance.create_req]=1+time;
-        else    GManager.instance.deadline[GManager.instance.create_req]=GManager.instance.scale[GManager.instance.create_req]*2+3+time; 
+        else    GManager.instance.deadline[GManager.instance.create_req]=GManager.instance.scale[GManager.instance.create_req]*4+time; 
     }
 }
