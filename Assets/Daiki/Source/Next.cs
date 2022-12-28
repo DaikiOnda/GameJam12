@@ -5,6 +5,19 @@ using UnityEngine;
 public class Next : MonoBehaviour
 {
     public GameObject  benefit;
+    public GameObject black;
+    ProductBlackco produckblackco;
+    //BlackC blackC;
+    void Start () {
+        produckblackco = black.GetComponent<ProductBlackco>();
+    }
+    void Update()
+    {
+        if((GManager.instance.time)%12==0){
+            produckblackco.Duringproduct=31;
+        }
+        
+    }
     //ボタンを押すと次のターンに
     public void GoNextTurn()
     {
