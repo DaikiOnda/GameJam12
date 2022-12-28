@@ -1,9 +1,12 @@
 using UnityEngine;
  
-public class GetClickedGameObject : Companyinfo {
+public class GetClickedGameObject : MonoBehaviour {
  
     GameObject clickedGameObject;
+    public GameObject panel;
+    bool Waittime = false;//Buttonを押すまでUpdateの中身の挙動を止める
     void Update () {
+        if(Waittime == false){
  
         if (Input.GetMouseButtonDown(0)) {//オブジェクトがクリックされたときこの中が実行される
  
@@ -15,15 +18,24 @@ public class GetClickedGameObject : Companyinfo {
             if (Physics.Raycast(ray, out hit)) {
                 clickedGameObject = hit.collider.gameObject;//クリックされたオブジェクトを代入
             }
-
-            //クリックされたオブジェクトの看板を下げる
-            GameObject childObject = clickedGameObject.transform.Find("build1").gameObject;
-            GameObject childObject2 = childObject.transform.Find("sign").gameObject;
-            childObject2.transform.position = new Vector3(childObject.transform.position.x, childObject.transform.position.y - 100, childObject.transform.position.z);
-           
-
+            panel.SetActive(true);
             Debug.Log(clickedGameObject);
+            Waittime = true;
         }
         
+        }
+        if(Input.GetKey(KeyCode.Escape)){//escキーが押されたときに、Panel画面を元に戻す
+             panel.SetActive(false);
+            Waittime=false;
+        }
+        
+    }
+      public void OnClick()
+    {
+         //クリックされたオブジェクトの看板を下げる
+            GameObject childObject = clickedGameObject.transform.Find("sign").gameObject;
+            childObject.SetActive(false);
+            panel.SetActive(false);
+            Waittime=false;
     }
 }
