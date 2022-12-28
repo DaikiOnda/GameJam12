@@ -8453,6 +8453,7 @@ MonoBehaviour:
   benefit: {fileID: 835155813}
   black: {fileID: 510839089}
   searcher: {fileID: 898000916}
+  year: 0
 --- !u!114 &1460109906
 MonoBehaviour:
   m_ObjectHideFlags: 0
