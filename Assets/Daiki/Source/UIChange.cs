@@ -12,6 +12,9 @@ public class UIChange : MonoBehaviour
     public GameObject alarmD;
     public GameObject alarmE;
     public GameObject market;
+    public GameObject select;
+    //public GameObject searcher;
+    //Searchreply searchreply;
     public void RequestUI()
     {
         if(!GManager.instance.request_go){
@@ -54,5 +57,10 @@ public class UIChange : MonoBehaviour
     public void marketUIclose()
     {
         market.SetActive(false);
+    }
+    public void selectUIclose()
+    {
+        select.SetActive(false);
+        //searchreply.Waittime=false;
     }
 }
