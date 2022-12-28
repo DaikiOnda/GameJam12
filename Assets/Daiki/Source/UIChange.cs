@@ -10,6 +10,7 @@ public class UIChange : MonoBehaviour
     public GameObject alarmB;
     public GameObject alarmC;
     public GameObject alarmD;
+    public GameObject alarmE;
     public GameObject market;
     public void RequestUI()
     {
@@ -42,6 +43,10 @@ public class UIChange : MonoBehaviour
     public void alarmDUIclose(){
         alarmD.SetActive(false);
         GManager.instance.alart=false;
+    }
+    public void alarmEUIclose(){
+        alarmE.SetActive(false);
+        GManager.instance.refuse=0;
     }
     public void requestUIclose(){
         request.SetActive(false);

@@ -20,7 +20,7 @@ public class Next : MonoBehaviour
     void Update()
     {
         
-        if((GManager.instance.turn==2)&&(GManager.instance.company_name!="未選択")){
+        if(((GManager.instance.request_go)||(GManager.instance.turn==2))&&(GManager.instance.company_name!="未選択")){
             searchreply.Searchbool=true;
         }
         else{

@@ -6,6 +6,7 @@ public class Create_request : MonoBehaviour
 {
     public GameObject  request;
     public GameObject  request_botton;
+    public GameObject  alarmE;
 
     public void request_company(){
         for(int j=0;j<GManager.instance.company_amount;j++)
@@ -49,6 +50,7 @@ public class Create_request : MonoBehaviour
             }
             //予算
             if(GManager.instance.company_reaction[i,0]>GManager.instance.req_budget_upper[GManager.instance.create_req]){
+                GManager.instance.refuse+=1;
                 GManager.instance.company_reaction[i,0]=0;
                 GManager.instance.company_reaction[i,3]=2;
             }
@@ -68,5 +70,9 @@ public class Create_request : MonoBehaviour
         GManager.instance.request_go=true;
         request_botton.SetActive(false);
         request.SetActive(false);
+        if(GManager.instance.refuse>=GManager.instance.company_amount){
+            alarmE.SetActive(true);
+            GManager.instance.request_go=false;
+        }
     }
 }
