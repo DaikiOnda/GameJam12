@@ -15,7 +15,7 @@ public ResultTextbudget rb;
     // Update is called once per frame
     void Update()
     {
-    if(rb.budgetrs>52000)
+    if(rb.budgetrs>630000)
     {   
         animator.SetBool("result",true);
     }else{
