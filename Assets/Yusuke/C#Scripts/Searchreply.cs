@@ -57,28 +57,24 @@ void Update()
                 if(com.Co[0]==false){//�������̉�Ђ��u���b�N��������Ŕ��o��
                     childObject.SetActive(true);
                     //text.text="���̉�Ђ̓u���b�N��Ƃ�����";
-                    reaction.SetActive(true);
                 }
                 break;
             case "企業2":
                 if(com.Co[1]==false){
                     childObject.SetActive(true);
                     //text.text="���̉�Ђ̓u���b�N��Ƃ�����";
-                    reaction.SetActive(true);
                 }
                 break;
             case "企業3":
                 if(com.Co[2]==false){
                     childObject.SetActive(true);
                     //text.text="���̉�Ђ̓u���b�N��Ƃ�����";
-                    reaction.SetActive(true);
                 }
                 break;
             case "企業4":
                 if(com.Co[3]==false){
                     childObject.SetActive(true);
                     //text.text="���̉�Ђ̓u���b�N��Ƃ�����";
-                    reaction.SetActive(true);
                 }
             break;
           }
