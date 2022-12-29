@@ -7,8 +7,14 @@ public class Create_request : MonoBehaviour
     public GameObject  request;
     public GameObject  request_botton;
     public GameObject  alarmE;
+    public GameObject company;
+    Companyinfo com;
+    void Start () {
+        com = company.GetComponent<Companyinfo>();
+    }
 
     public void request_company(){
+        //com = company.GetComponent<Companyinfo>();
         for(int j=0;j<GManager.instance.company_amount;j++)
         {
             GManager.instance.company_reaction[j,0]=0;
@@ -24,7 +30,7 @@ public class Create_request : MonoBehaviour
             if(GManager.instance.scale[GManager.instance.create_req]<=GManager.instance.company_status[i,0]){
                 GManager.instance.company_reaction[i,1]=3;
             }
-            else if((GManager.instance.coBW[i])&&(GManager.instance.scale[GManager.instance.create_req]<=GManager.instance.company_status[i,0]+1)){
+            else if((com.Co[i])&&(GManager.instance.scale[GManager.instance.create_req]<=GManager.instance.company_status[i,0]+1)){
                 GManager.instance.company_reaction[i,1]=0;
             }
             else{
@@ -45,7 +51,7 @@ public class Create_request : MonoBehaviour
             //予算にランダムで変動を
             GManager.instance.company_reaction[i,0]=(GManager.instance.company_reaction[i,0]*Random.Range(10, 13))/10;
             //ブラックか
-            if(GManager.instance.coBW[i]){
+            if(com.Co[i]){
                 GManager.instance.company_reaction[i,0]=(GManager.instance.company_reaction[i,0]*GManager.instance.company_status[i,1])/9;
             }
             //予算
