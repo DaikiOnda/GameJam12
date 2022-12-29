@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Black_num : MonoBehaviour
+public class Result_money : MonoBehaviour
 {
-    private Text comText = null;
+    private Text moneyText = null;
     public GameObject map;
     ProductBlackco black;
     public bool BoW=true;
@@ -13,11 +13,11 @@ public class Black_num : MonoBehaviour
     void Start()
     {
         black = map.GetComponent<ProductBlackco>();
-        comText = GetComponent<Text>();
+        moneyText = GetComponent<Text>();
         if (GManager.instance != null)
         {
-            if(BoW)comText.text = "ホワイト企業"+3+"社";
-            else comText.text = "ブラック企業"+1+"社";
+            if(BoW)moneyText.text = GManager.instance.profit*3+"万増加";
+            else moneyText.text = GManager.instance.loss+"万減少";
         }
         else
         {
@@ -29,7 +29,7 @@ public class Black_num : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(BoW)comText.text = "ホワイト企業"+(4-black.BlackCo)+"社";
-        else comText.text = "ブラック企業"+black.BlackCo+"社";
+        if(BoW)moneyText.text = GManager.instance.profit*(4-black.BlackCo)+"万増加";
+        else moneyText.text = GManager.instance.loss*black.BlackCo+"万減少";
     }
 }

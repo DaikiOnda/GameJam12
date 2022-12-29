@@ -31,7 +31,8 @@ public class Next : MonoBehaviour
             flag=false;
             if((GManager.instance.time)%24==0){
                 year++;
-                if(year==3){
+                //年の限界を決める
+                if(year==10){
                     produckblackco.Days=400;
                 }
             }
@@ -60,7 +61,7 @@ public class Next : MonoBehaviour
                     //毎月1日に利益の獲得
                     if(GManager.instance.time%2==0){
                         benefit.SetActive(true);
-                        GManager.instance.budget+=GManager.instance.profit;
+                        //GManager.instance.budget+=(GManager.instance.profit-GManager.instance.loss);
                     }
                     else    GManager.instance.turn=(GManager.instance.turn+1)%4;
                 }
@@ -84,7 +85,7 @@ public class Next : MonoBehaviour
             //毎月1日に利益の獲得
             if(GManager.instance.time%2==0){
                 benefit.SetActive(true);
-                GManager.instance.budget+=GManager.instance.profit;
+                //GManager.instance.budget+=(GManager.instance.profit-GManager.instance.loss);
             }
             else    GManager.instance.turn=(GManager.instance.turn+1)%4;
         }
