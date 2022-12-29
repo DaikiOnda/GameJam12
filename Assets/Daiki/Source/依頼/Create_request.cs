@@ -49,10 +49,13 @@ public class Create_request : MonoBehaviour
                 GManager.instance.company_reaction[i,2]=1;
             }
             //予算にランダムで変動を
-            GManager.instance.company_reaction[i,0]=(GManager.instance.company_reaction[i,0]*Random.Range(10, 13))/10;
+            GManager.instance.company_reaction[i,0]=(GManager.instance.company_reaction[i,0]*Random.Range(10, 13+GManager.instance.year))/10;
             //ブラックか
-            if(com.Co[i]){
-                GManager.instance.company_reaction[i,0]=(GManager.instance.company_reaction[i,0]*GManager.instance.company_status[i,1])/9;
+            if(!com.Co[i]){
+                GManager.instance.company_reaction[i,0]=(GManager.instance.company_reaction[i,0]*(GManager.instance.company_status[i,1]+Random.Range(1-GManager.instance.year,3)))/10;
+            }
+            else{
+                GManager.instance.company_reaction[i,0]=(GManager.instance.company_reaction[i,0]*Random.Range(10+GManager.instance.year, 13+GManager.instance.year))/10;
             }
             //予算
             if(GManager.instance.company_reaction[i,0]>GManager.instance.req_budget_upper[GManager.instance.create_req]){

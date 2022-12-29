@@ -30,6 +30,9 @@ public class UIChange : MonoBehaviour
             reaction.SetActive(false);
             GManager.instance.company_name="未選択";
             searchreply.Waittime=false;
+        }if(Input.GetKey(KeyCode.H))
+        { 
+            Debug.Log("呼び出す");
         }
     }
     public void RequestUI()
