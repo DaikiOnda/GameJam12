@@ -6,7 +6,7 @@ public class GetClickedGameObject : MonoBehaviour {
     public GameObject panel;
     public GameObject reaction;
     public Searchreply Sr;
-    bool Waittime = false;//Button�������܂�Update�̒��g�̋������~�߂�
+    public bool Waittime = false;//Button�������܂�Update�̒��g�̋������~�߂�
     public Text text;
 void Update()
 {
@@ -27,7 +27,7 @@ void Update()
                     clickedGameObject = hit.collider.gameObject;//�N���b�N���ꂽ�I�u�W�F�N�g����
                 }
            
-               panel.SetActive(true);//Button�̕\��
+               if(GManager.instance.turn!=3)panel.SetActive(true);//Button�̕\��
                Debug.Log(clickedGameObject);
                Waittime=true;
                 
@@ -49,6 +49,6 @@ void Update()
             panel.SetActive(false);
             reaction.SetActive(true);
             text.text=GManager.instance.company_name+"を摘発した";
-            Waittime=false;
+            //Waittime=true;
     }
 }
