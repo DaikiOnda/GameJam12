@@ -87,7 +87,7 @@ public class Next : MonoBehaviour
             }
             else{
                 GManager.instance.turn=(GManager.instance.turn+1)%4;
-                //benefit.SetActive(false);
+                benefit.SetActive(false);
             }    
         }
     }

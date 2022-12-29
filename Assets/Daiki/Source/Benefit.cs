@@ -16,7 +16,7 @@ public class Benefit : MonoBehaviour
         else{
             black.ResultTurnbool=true;
         }
-        GManager.instance.budget+=(GManager.instance.profit*(4-black.BlackCo)-GManager.instance.loss*black.BlackCo);
+        //GManager.instance.budget+=(GManager.instance.profit*(4-black.BlackCo)-GManager.instance.loss*black.BlackCo);
     }
     public void up(){
         if((!GManager.instance.request_go)&&(GManager.instance.time%2==0)){
@@ -28,10 +28,12 @@ public class Benefit : MonoBehaviour
                 black.BlackCo=0;
                 black.ResultTurnbool=true;
             }
-            GManager.instance.budget+=(GManager.instance.profit*(4-black.BlackCo)-GManager.instance.loss*black.BlackCo);
+            while(!black.ResultTurnbool);
+            //GManager.instance.budget=GManager.instance.budget+GManager.instance.profit*(4-black.BlackCo)-GManager.instance.loss*black.BlackCo;
         }
     }
     void OnDisable() {
+        GManager.instance.budget=GManager.instance.budget+GManager.instance.profit*(4-black.BlackCo)-GManager.instance.loss*black.BlackCo;
         black.AfterresultReset=true;
 	}
 }
