@@ -26,7 +26,13 @@ public class Budget : MonoBehaviour
     {
         oku=GManager.instance.budget/10000;
         man=GManager.instance.budget%10000;
-        if(oku>0)   budgetText.text = "予算 "+oku+"億"+man+"万";
-        else   budgetText.text = "予算 "+man+"万";
+        if(oku>0){
+            budgetText.text = "予算 "+oku+"億"+man+"万";
+            Debug.Log("aaa");
+        }   
+        else{
+            budgetText.text = "予算 "+man+"万";
+            Debug.Log("bbb");
+        }   
     }
 }

@@ -23,7 +23,10 @@ public class Turn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GManager.instance.turn==0)turnText.text = "収支";
+        if (GManager.instance.turn==0){
+            turnText.text = "収支";
+            if((GManager.instance.year==0)&&(GManager.instance.time==0))turnText.text = "開始";
+        }
         else if (GManager.instance.turn==1)turnText.text = "依頼";
         else if (GManager.instance.turn==2)turnText.text = "調査";
         else turnText.text = "結果";

@@ -14,7 +14,7 @@ public class Finish : MonoBehaviour
         GManager.instance.turn=0;
         GManager.instance.time=0;
         GManager.instance.year=0;
-        GManager.instance.budget=10000;//予算
+        GManager.instance.budget=500000;//予算
         
     }
 
