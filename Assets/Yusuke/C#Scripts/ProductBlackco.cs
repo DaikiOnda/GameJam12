@@ -28,7 +28,7 @@ void Update()
 
     if(Duringproduct>=30)
     {
-        int rnd = Random.Range(1, 5);�@// �� 1�`4�͈̔͂Ń����_���Ȑ����l���Ԃ�
+        int rnd = Random.Range(1, 5);// �� 1�`4�͈̔͂Ń����_���Ȑ����l���Ԃ�
     switch(rnd) {
         case 1:
             com.Co[0]=false;
