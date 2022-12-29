@@ -32,7 +32,7 @@ void Update()
                     clickedGameObject = hit.collider.gameObject;//�N���b�N���ꂽ�I�u�W�F�N�g����
                 }
            
-               panel.SetActive(true);//Button�̕\��
+               if(GManager.instance.turn!=3)panel.SetActive(true);//Button�̕\��
                Debug.Log(clickedGameObject);
                Waittime=true;
                 

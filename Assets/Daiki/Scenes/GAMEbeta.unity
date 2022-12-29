@@ -1145,7 +1145,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1460109905}
         m_TargetAssemblyTypeName: Next, Assembly-CSharp
-        m_MethodName: GoNextTime
+        m_MethodName: GoNextTurn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11909,6 +11909,7 @@ MonoBehaviour:
   black: {fileID: 510839089}
   searcher: {fileID: 898000916}
   alarmD: {fileID: 1724966788}
+  result: {fileID: 35909884}
   sound1: {fileID: 8300000, guid: aae924e89b773a149afadd4924771040, type: 3}
 --- !u!114 &1460109906
 MonoBehaviour:
@@ -16774,7 +16775,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1460109905}
         m_TargetAssemblyTypeName: Next, Assembly-CSharp
-        m_MethodName: GoNextTime
+        m_MethodName: GoNextTurn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

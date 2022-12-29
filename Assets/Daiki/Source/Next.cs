@@ -8,11 +8,13 @@ public class Next : MonoBehaviour
     public GameObject black;
     public GameObject searcher;
     public GameObject alarmD;
+    public GameObject result;
     private bool flag=false;
     ProductBlackco produckblackco;
     Searchreply searchreply;
     public AudioClip sound1;
     AudioSource audioSource;
+    public  GetClickedGameObject    get;
     //BlackC blackC;
     void Start () {
         produckblackco = black.GetComponent<ProductBlackco>();
@@ -22,7 +24,7 @@ public class Next : MonoBehaviour
     void Update()
     {
         
-        if(((GManager.instance.request_go)||(GManager.instance.turn==2))&&(GManager.instance.company_name!="未選択")){
+        if(((GManager.instance.request_go)||(GManager.instance.turn==2)||(GManager.instance.turn==3))&&(GManager.instance.company_name!="未選択")){
             searchreply.Searchbool=true;
         }
         else{
@@ -53,10 +55,11 @@ public class Next : MonoBehaviour
             searchreply.panel.SetActive(false);
             //searchreply.reaction.SetActive(false);
             searchreply.Waittime=false;
+            get.Waittime=false;
             GManager.instance.turn=(GManager.instance.turn+1)%4;
+            result.SetActive(false);
             benefit.SetActive(false);
             if(GManager.instance.turn!=2){
-                if(GManager.instance.turn==3)GManager.instance.turn=(GManager.instance.turn+1)%4;
                 if(GManager.instance.turn==0){
                     GManager.instance.time=(GManager.instance.time+1)%24;
                     //毎月1日に利益の獲得
@@ -86,6 +89,7 @@ public class Next : MonoBehaviour
             GManager.instance.time=(GManager.instance.time+1)%24;
             //毎月1日に利益の獲得
             if(GManager.instance.time%2==0){
+                result.SetActive(false);
                 audioSource.PlayOneShot(sound1);
                 benefit.SetActive(true);
                 //GManager.instance.budget+=(GManager.instance.profit-GManager.instance.loss);
