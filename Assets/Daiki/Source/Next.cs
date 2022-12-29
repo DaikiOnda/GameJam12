@@ -11,10 +11,13 @@ public class Next : MonoBehaviour
     private bool flag=false;
     ProductBlackco produckblackco;
     Searchreply searchreply;
+    public AudioClip sound1;
+    AudioSource audioSource;
     //BlackC blackC;
     void Start () {
         produckblackco = black.GetComponent<ProductBlackco>();
         searchreply = searcher.GetComponent<Searchreply>();
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -58,6 +61,7 @@ public class Next : MonoBehaviour
                     GManager.instance.time=(GManager.instance.time+1)%24;
                     //毎月1日に利益の獲得
                     if(GManager.instance.time%2==0){
+                        audioSource.PlayOneShot(sound1);
                         benefit.SetActive(true);
                         //GManager.instance.budget+=(GManager.instance.profit-GManager.instance.loss);
                     }
@@ -82,6 +86,7 @@ public class Next : MonoBehaviour
             GManager.instance.time=(GManager.instance.time+1)%24;
             //毎月1日に利益の獲得
             if(GManager.instance.time%2==0){
+                audioSource.PlayOneShot(sound1);
                 benefit.SetActive(true);
                 //GManager.instance.budget+=(GManager.instance.profit-GManager.instance.loss);
             }
