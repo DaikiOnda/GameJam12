@@ -23,6 +23,6 @@ public class RequestNum : MonoBehaviour
     void Update()
     {
         if (GManager.instance.turn==1)requestText.text = "依頼数 "+GManager.instance.request+"/"+GManager.instance.requestlimit;
-        else if (GManager.instance.turn==2)requestText.text = "調査数"+GManager.instance.watch+"/"+GManager.instance.watchlimit;
+        else if (GManager.instance.turn==2)requestText.text = "調査・摘発数"+GManager.instance.watch+"/"+GManager.instance.watchlimit;
     }
 }

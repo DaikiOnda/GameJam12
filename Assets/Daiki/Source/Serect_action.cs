@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Serect_action : MonoBehaviour
 {
+    public GameObject select;
+    public GameObject alarmG;
     public GameObject send_request;
     public GameObject search;
     public GameObject exposed;
@@ -15,6 +17,14 @@ public class Serect_action : MonoBehaviour
         actionUI.SetActive(false);
         explain.SetActive(false);
         GManager.instance.serect=true;
+        /*if(GManager.instance.watch==GManager.instance.watchlimit){
+            select.SetActive(false);
+            alarmG.SetActive(true);
+            GManager.instance.company_name="未選択";
+        }
+        else   {
+            GManager.instance.watch++;
+        }*/
         if(GManager.instance.turn==1){
             send_request.SetActive(true);
             search.SetActive(false);

@@ -11,8 +11,6 @@ public class Request_carsol : MonoBehaviour
     private void OnMouseOver()
     {
         Vector3 mousePosition = Input.mousePosition;
-        Debug.Log(company.name);
-        Debug.Log(mousePosition);
         if((GManager.instance.turn==1)&&GManager.instance.request_go&&(!GManager.instance.alart)&&(!GManager.instance.serect)) explain.SetActive(true);
         GManager.instance.company_name=company.name;
     }

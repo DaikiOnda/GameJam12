@@ -6,7 +6,7 @@ public class GetClickedGameObject : MonoBehaviour {
     public GameObject panel;
     public GameObject reaction;
     public Searchreply Sr;
-    bool Waittime = false;//Button‚ğ‰Ÿ‚·‚Ü‚ÅUpdate‚Ì’†g‚Ì‹““®‚ğ~‚ß‚é
+    bool Waittime = false;//Buttonï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½Updateï¿½Ì’ï¿½ï¿½gï¿½Ì‹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½ß‚ï¿½
     public Text text;
 void Update()
 {
@@ -15,7 +15,7 @@ void Update()
         if(Waittime == false)
         {
            if (Input.GetMouseButtonDown(0)) 
-           {//ƒIƒuƒWƒFƒNƒg‚ªƒNƒŠƒbƒN‚³‚ê‚½‚Æ‚«‚±‚Ì’†‚ªÀs‚³‚ê‚é
+           {//ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ê‚½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½Ì’ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½
  
                 clickedGameObject = null;
  
@@ -24,18 +24,18 @@ void Update()
  
                 if (Physics.Raycast(ray, out hit)) 
                 {
-                    clickedGameObject = hit.collider.gameObject;//ƒNƒŠƒbƒN‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚ğ‘ã“ü
+                    clickedGameObject = hit.collider.gameObject;//ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ê‚½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½
                 }
            
-               panel.SetActive(true);//Button‚Ì•\¦
+               panel.SetActive(true);//Buttonï¿½Ì•\ï¿½ï¿½
                Debug.Log(clickedGameObject);
                Waittime=true;
                 
             }
         }
             if(Input.GetKey(KeyCode.Escape))
-            {   //escƒL[‚ª‰Ÿ‚³‚ê‚½‚Æ‚«‚ÉAPanel‰æ–Ê‚ğŒ³‚É–ß‚·
-                panel.SetActive(false);//Button‚Ì”ñ•\¦
+            {   //escï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Æ‚ï¿½ï¿½ÉAPanelï¿½ï¿½Ê‚ï¿½ï¿½ï¿½ï¿½É–ß‚ï¿½
+                panel.SetActive(false);//Buttonï¿½Ì”ï¿½\ï¿½ï¿½
                 reaction.SetActive(false);
                 Waittime=false;
             }
@@ -43,12 +43,12 @@ void Update()
 }
       public void OnClick()
     {
-         //ƒNƒŠƒbƒN‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚ÌŠÅ”Â‚ğ‰º‚°‚é
+         //ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ê‚½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌŠÅ”Â‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             GameObject childObject = clickedGameObject.transform.Find("sign").gameObject;
             childObject.SetActive(false);
             panel.SetActive(false);
             reaction.SetActive(true);
-            text.text="‚±‚Ì‰ïĞ‚Íc‹Æ‘ã‚ğ\n   •¥‚Á‚Ä‚¢‚È‚©‚Á‚½";
+            text.text=GManager.instance.company_name+"ã‚’æ‘˜ç™ºã—ãŸ";
             Waittime=false;
     }
 }

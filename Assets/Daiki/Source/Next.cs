@@ -31,7 +31,8 @@ public class Next : MonoBehaviour
             flag=false;
             if((GManager.instance.time)%24==0){
                 year++;
-                if(year==3){
+                //年の限界を決める
+                if(year==10){
                     produckblackco.Days=400;
                 }
             }
@@ -46,6 +47,8 @@ public class Next : MonoBehaviour
             alarmD.SetActive(true);
         }
         else{
+            GManager.instance.request=0;
+            GManager.instance.watch=0;
             searchreply.Searchbool=false;
             searchreply.panel.SetActive(false);
             //searchreply.reaction.SetActive(false);
@@ -53,12 +56,13 @@ public class Next : MonoBehaviour
             GManager.instance.turn=(GManager.instance.turn+1)%4;
             benefit.SetActive(false);
             if(GManager.instance.turn!=2){
+                if(GManager.instance.turn==3)GManager.instance.turn=(GManager.instance.turn+1)%4;
                 if(GManager.instance.turn==0){
                     GManager.instance.time=(GManager.instance.time+1)%24;
                     //毎月1日に利益の獲得
                     if(GManager.instance.time%2==0){
                         benefit.SetActive(true);
-                        GManager.instance.budget+=GManager.instance.profit;
+                        //GManager.instance.budget+=(GManager.instance.profit-GManager.instance.loss);
                     }
                     else    GManager.instance.turn=(GManager.instance.turn+1)%4;
                 }
@@ -75,12 +79,16 @@ public class Next : MonoBehaviour
             alarmD.SetActive(true);
         }
         else{
+            GManager.instance.request=0;
+            GManager.instance.watch=0;
             GManager.instance.turn=0;
             GManager.instance.time=(GManager.instance.time+1)%24;
             //毎月1日に利益の獲得
             if(GManager.instance.time%2==0){
-                GManager.instance.budget+=GManager.instance.profit;
+                benefit.SetActive(true);
+                //GManager.instance.budget+=(GManager.instance.profit-GManager.instance.loss);
             }
+            else    GManager.instance.turn=(GManager.instance.turn+1)%4;
         }
     }
 }
