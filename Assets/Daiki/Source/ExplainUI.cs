@@ -10,7 +10,7 @@ public class ExplainUI : MonoBehaviour
     public GameObject ex3;
     public GameObject ex4;
     public GameObject next_turn;
-    private int now=1;
+    private int change=1;
     // Start is called before the first frame update
     void Start () {
     }
@@ -19,20 +19,35 @@ public class ExplainUI : MonoBehaviour
     void Update()
     {
     }
+    public void buck_ex(){
+        if(change>1)change-=1;
+        exUI();
+    }
+    public void next_ex(){
+        change+=1;
+        exUI();
+    }
     public void exUI(){
-        if(now==1){
+        if(change<1){}
+        else if(change==1){
+            ex1.SetActive(true);
+            ex2.SetActive(false);
+            ex3.SetActive(false);
+            ex4.SetActive(false);
+        }
+        else if(change==2){
             ex1.SetActive(false);
             ex2.SetActive(true);
             ex3.SetActive(false);
             ex4.SetActive(false);
         }
-        else if(now==2){
+        else if(change==3){
             ex1.SetActive(false);
             ex2.SetActive(false);
             ex3.SetActive(true);
             ex4.SetActive(false);
         }
-        else if(now==3){
+        else if(change==4){
             ex1.SetActive(false);
             ex2.SetActive(false);
             ex3.SetActive(false);
@@ -45,8 +60,7 @@ public class ExplainUI : MonoBehaviour
             ex4.SetActive(false);
             ex.SetActive(false);
             next_turn.GetComponent<Next>().GoNextTurn();
-        }  
-        now++;
+        } 
     }
     public void del(){
         ex1.SetActive(false);
