@@ -95,12 +95,4 @@ public class UIChange : MonoBehaviour
         GManager.instance.company_name="未選択";
         //searchreply.Waittime=false;
     }
-    public void wathcount(){
-        if(GManager.instance.watch<GManager.instance.watchlimit)GManager.instance.watch++;
-        else{
-            select.SetActive(false);
-            alarmG.SetActive(true);
-            GManager.instance.company_name="未選択";
-        }
-    }
 }

@@ -16,7 +16,7 @@ public class GManager : MonoBehaviour
     public int request=0;
     public int requestlimit=1;
     public int watch=0;
-    public int watchlimit=2;
+    public int watchlimit=1;
     public int budget=1000;//予算
     public int refuse=0;
     public int profit;

@@ -7,10 +7,14 @@ public class money_control : MonoBehaviour
     public GameObject panel;
     public GameObject searcher;
     Searchreply searchreply;
+    public  ProductBlackco black;
     void Start () {
         searchreply = searcher.GetComponent<Searchreply>();
     }
+    void update()
+    {
 
+    }   
     public void send(){
         string company;
         int company_num;

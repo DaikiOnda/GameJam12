@@ -46,6 +46,8 @@ public class Next : MonoBehaviour
             alarmD.SetActive(true);
         }
         else{
+            GManager.instance.request=0;
+            GManager.instance.watch=0;
             searchreply.Searchbool=false;
             searchreply.panel.SetActive(false);
             //searchreply.reaction.SetActive(false);
@@ -75,12 +77,16 @@ public class Next : MonoBehaviour
             alarmD.SetActive(true);
         }
         else{
+            GManager.instance.request=0;
+            GManager.instance.watch=0;
             GManager.instance.turn=0;
             GManager.instance.time=(GManager.instance.time+1)%24;
             //毎月1日に利益の獲得
             if(GManager.instance.time%2==0){
+                benefit.SetActive(true);
                 GManager.instance.budget+=GManager.instance.profit;
             }
+            else    GManager.instance.turn=(GManager.instance.turn+1)%4;
         }
     }
 }

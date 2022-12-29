@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ProductBlackco : MonoBehaviour //Companyinfo‚©‚çCo1`Co‚S‚Ü‚Å‚Ìbool‚Ì’l‚ğ‚Á‚Ä‚­‚é
+public class ProductBlackco : MonoBehaviour //Companyinfoï¿½ï¿½ï¿½ï¿½Co1ï¿½`Coï¿½Sï¿½Ü‚Å‚ï¿½boolï¿½Ì’lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
 {
-public int Days = 0;//4‰ÓŠ‚·‚×‚Ä‚ªƒuƒ‰ƒbƒNŠé‹Æ‚É‚È‚é‚Ü‚Å‚Ì“ú”
-public int Duringproduct = 0;//ƒuƒ‰ƒbƒNŠé‹Æ‚ªƒ‰ƒ“ƒ_ƒ€‚Å‘‚¦‚é‚Ü‚Å‚Ì“ú”
-public int BlackCo =0;//ƒuƒ‰ƒbƒNŠé‹Æ‚Ì‰ïĞ‚Ì”‚ğ‘ã“ü
-public bool ResultTurnbool=false;//Œ‹‰Ê‚Ìƒ^[ƒ“‚ª—ˆ‚½‚Étrue
-public bool AfterresultReset=false;//Œ‹‰Ê‚Ìƒ^[ƒ“‚ªI‚í‚Á‚½Œã‚ÉAƒuƒ‰ƒbƒNŠé‹Æ‚ÌƒJƒEƒ“ƒg‚ğ‰Šú‰»
+public int Days = 0;//4ï¿½Óï¿½ï¿½ï¿½ï¿½×‚Ä‚ï¿½ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½Æ‚É‚È‚ï¿½Ü‚Å‚Ì“ï¿½ï¿½ï¿½
+public int Duringproduct = 0;//ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½Å‘ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚Å‚Ì“ï¿½ï¿½ï¿½
+public int BlackCo =0;//ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½Æ‚Ì‰ï¿½Ğ‚Ìï¿½ï¿½ï¿½ï¿½ï¿½
+public bool ResultTurnbool=false;//ï¿½ï¿½ï¿½Ê‚Ìƒ^ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½true
+public bool AfterresultReset=false;//ï¿½ï¿½ï¿½Ê‚Ìƒ^ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÉAï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½Æ‚ÌƒJï¿½Eï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 public Companyinfo com;
 
 void Update()
     {
-        if(Days>=365)//365“ú‚ª‰ß‚¬‚ÄA‚È‚©‚ÉBlackŠé‹Æ‚ª‚¢‚é‚©‚Ç‚¤‚©
+        if(Days>=365)//365ï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½ï¿½ÄAï¿½È‚ï¿½ï¿½ï¿½Blackï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½é‚©ï¿½Ç‚ï¿½ï¿½ï¿½
         {
-            if(BlackCo >= 1)//‚à‚µƒuƒ‰ƒbƒNŠé‹Æ‚ª‚P‚ÂˆÈã‚Å‚à‚ ‚ê‚ÎA‚»‚Ì”ÍˆÍ‚Ì‰ïĞ‚Í‚·‚×‚ÄBlack‚É‚È‚é
+            if(BlackCo >= 1)//ï¿½ï¿½ï¿½ï¿½ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½Æ‚ï¿½ï¿½Pï¿½ÂˆÈï¿½Å‚ï¿½ï¿½ï¿½ï¿½ï¿½ÎAï¿½ï¿½ï¿½Ì”ÍˆÍ‚Ì‰ï¿½Ğ‚Í‚ï¿½ï¿½×‚ï¿½Blackï¿½É‚È‚ï¿½
             {
-            for(int i=0;i<4;i++)com.Co[i] = false;//ü‚è‚Ì‚SĞ‚ğBlackŠé‹Æ‚É‚·‚é
+            for(int i=0;i<4;i++)com.Co[i] = false;//ï¿½ï¿½ï¿½ï¿½Ì‚Sï¿½Ğ‚ï¿½Blackï¿½ï¿½Æ‚É‚ï¿½ï¿½ï¿½
             }
             
-            Days = 0;//“ú”‚ğ–ß‚·
+            Days = 0;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
         }
 
 
 
     if(Duringproduct>=30)
     {
-        int rnd = Random.Range(1, 5);@// ¦ 1`4‚Ì”ÍˆÍ‚Åƒ‰ƒ“ƒ_ƒ€‚È®”’l‚ª•Ô‚é
+        int rnd = Random.Range(1, 5);ï¿½@// ï¿½ï¿½ 1ï¿½`4ï¿½Ì”ÍˆÍ‚Åƒï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½Èï¿½ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½Ô‚ï¿½
     switch(rnd) {
         case 1:
             com.Co[0]=false;
@@ -46,22 +46,20 @@ void Update()
     }
 
 
-        if(ResultTurnbool==true){//Œ‹‰Êƒ^[ƒ“‚ª—ˆ‚½‚ÉAƒuƒ‰ƒbƒNŠé‹Æ‚Ì”‚ğŠm”F
+        if(ResultTurnbool==true){//ï¿½ï¿½ï¿½Êƒ^ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÉAï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½Æ‚Ìï¿½ï¿½ï¿½ï¿½mï¿½F
             for(int i=0;i<4;i++)
             {
                 if(com.Co[i]==false)
                 {
                     BlackCo++;
-                }else{
-                    if(BlackCo>0) BlackCo--;
                 }
             }
-            ResultTurnbool=false;//ÀsŒã‚Ífalse
+            ResultTurnbool=false;//ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½false
         }
         if(AfterresultReset==true)
         {
             BlackCo=0;
-            AfterresultReset=false;//ÀsŒã‚Ífalse
+            AfterresultReset=false;//ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½false
         }
         
  }}

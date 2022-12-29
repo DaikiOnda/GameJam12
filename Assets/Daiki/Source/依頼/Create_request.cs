@@ -46,7 +46,7 @@ public class Create_request : MonoBehaviour
             GManager.instance.company_reaction[i,0]=(GManager.instance.company_reaction[i,0]*Random.Range(10, 13))/10;
             //ブラックか
             if(GManager.instance.coBW[i]){
-                GManager.instance.company_reaction[i,0]=(GManager.instance.company_reaction[i,0]*GManager.instance.company_status[i,1])/10;
+                GManager.instance.company_reaction[i,0]=(GManager.instance.company_reaction[i,0]*GManager.instance.company_status[i,1])/9;
             }
             //予算
             if(GManager.instance.company_reaction[i,0]>GManager.instance.req_budget_upper[GManager.instance.create_req]){
