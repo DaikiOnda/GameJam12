@@ -20,7 +20,6 @@ public class UIChange : MonoBehaviour
     public GameObject reaction;
     Searchreply searchreply;
     void Start () {
-        Debug.Log ("Start");
         searchreply = searcher.GetComponent<Searchreply>();
     }
     void Update(){

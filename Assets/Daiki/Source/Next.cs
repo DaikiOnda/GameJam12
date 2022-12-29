@@ -9,7 +9,6 @@ public class Next : MonoBehaviour
     public GameObject searcher;
     public GameObject alarmD;
     private bool flag=false;
-    public int year=0;
     ProductBlackco produckblackco;
     Searchreply searchreply;
     //BlackC blackC;
@@ -30,9 +29,9 @@ public class Next : MonoBehaviour
             produckblackco.Duringproduct=31;
             flag=false;
             if((GManager.instance.time)%24==0){
-                year++;
+                GManager.instance.year++;
                 //年の限界を決める
-                if(year==10){
+                if(GManager.instance.year==10){
                     produckblackco.Days=400;
                 }
             }
@@ -48,6 +47,7 @@ public class Next : MonoBehaviour
         }
         else{
             GManager.instance.request=0;
+            GManager.instance.create_req=0;
             GManager.instance.watch=0;
             searchreply.Searchbool=false;
             searchreply.panel.SetActive(false);

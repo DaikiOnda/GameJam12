@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
         timeText = GetComponent<Text>();
         if (GManager.instance != null)
         {
-            timeText.text = month+"月"+days+"日";
+            timeText.text = (GManager.instance.year+1)+"年目"+month+"月"+days+"日";
         }
         else
         {
@@ -30,6 +30,6 @@ public class Timer : MonoBehaviour
         }
         else */if(GManager.instance.time%2==0)days=1;
         else days=15;
-        timeText.text = month+"月"+days+"日";
+            timeText.text = (GManager.instance.year+1)+"年目"+month+"月"+days+"日";
     }
 }

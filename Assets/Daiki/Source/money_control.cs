@@ -25,6 +25,7 @@ public class money_control : MonoBehaviour
         GManager.instance.request_go=false;
         searchreply.Waittime=false;
         GManager.instance.request+=1;
+        GManager.instance.create_req+=1;
     }
     public void reset(){
         searchreply.Waittime=false;
