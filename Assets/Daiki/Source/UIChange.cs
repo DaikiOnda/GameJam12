@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class UIChange : MonoBehaviour
 {
     public GameObject  request;
@@ -16,9 +16,22 @@ public class UIChange : MonoBehaviour
     public GameObject market;
     public GameObject select;
     public GameObject searcher;
+    public GameObject panel;
+    public GameObject reaction;
     Searchreply searchreply;
     void Start () {
+        Debug.Log ("Start");
         searchreply = searcher.GetComponent<Searchreply>();
+    }
+    void Update(){
+        
+        if(Input.GetKey(KeyCode.Escape))
+        {   //esc�L�[�������ꂽ�Ƃ��ɁAPanel��ʂ����ɖ߂�
+            panel.SetActive(false);//Button�̔�\��
+            reaction.SetActive(false);
+            GManager.instance.company_name="未選択";
+            searchreply.Waittime=false;
+        }
     }
     public void RequestUI()
     {

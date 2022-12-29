@@ -56,6 +56,7 @@ public class Next : MonoBehaviour
             GManager.instance.turn=(GManager.instance.turn+1)%4;
             benefit.SetActive(false);
             if(GManager.instance.turn!=2){
+                if(GManager.instance.turn==3)GManager.instance.turn=(GManager.instance.turn+1)%4;
                 if(GManager.instance.turn==0){
                     GManager.instance.time=(GManager.instance.time+1)%24;
                     //毎月1日に利益の獲得
