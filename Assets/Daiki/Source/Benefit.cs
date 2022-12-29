@@ -19,7 +19,7 @@ public class Benefit : MonoBehaviour
         GManager.instance.budget+=(GManager.instance.profit*(4-black.BlackCo)-GManager.instance.loss*black.BlackCo);
     }
     public void up(){
-        if(!GManager.instance.request_go){
+        if((!GManager.instance.request_go)&&(GManager.instance.time%2==0)){
             if(first){
                 black = map.GetComponent<ProductBlackco>();
                 first=false;
