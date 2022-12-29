@@ -8,7 +8,7 @@ public class Startbutton : MonoBehaviour
   
     public void Onclick(){
         Debug.Log("ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚Ü‚µ‚½I");
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Gamebeta");
     }
    
 }
