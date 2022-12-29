@@ -9,7 +9,7 @@ public class Resultnews : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(GManager.instance.budget >= 52000)
+        if(GManager.instance.budget >= 630000)
         {
             GameClear.SetActive(true);
         }else{
