@@ -377,7 +377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068e8f63a30139048a48fd6ee3a1c57b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 2063848656}
   Gameover: {fileID: 962890886}
   GameClear: {fileID: 1362658772}
 --- !u!1 &362925123
@@ -2861,7 +2860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: {fileID: 364743092}
-  budgetrs: 53000
+  budgetrs: 0
 --- !u!1 &2105380920
 GameObject:
   m_ObjectHideFlags: 0
