@@ -5,6 +5,7 @@ using System;
 public class UIChange : MonoBehaviour
 {
     public GameObject  request;
+    public GameObject ex;
     public GameObject  enhancement;
     public GameObject alarm;
     public GameObject alarmB;
@@ -30,9 +31,10 @@ public class UIChange : MonoBehaviour
             reaction.SetActive(false);
             GManager.instance.company_name="未選択";
             searchreply.Waittime=false;
-        }if(Input.GetKey(KeyCode.H))
+        }
+        if(Input.GetKey(KeyCode.H))
         { 
-            Debug.Log("呼び出す");
+            ex.SetActive(true);
         }
     }
     public void RequestUI()
