@@ -31,6 +31,7 @@ public class GManager : MonoBehaviour
     public int turn=0;
     public int time=0;
     public int year=0;
+    public int plus=0;
     public int budget=500000;//予算
     void Start()
     {        

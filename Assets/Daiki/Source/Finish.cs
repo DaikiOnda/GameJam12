@@ -14,8 +14,8 @@ public class Finish : MonoBehaviour
         GManager.instance.turn=0;
         GManager.instance.time=0;
         GManager.instance.year=0;
+        GManager.instance.plus=0;
         GManager.instance.budget=500000;//予算
-        
     }
 
     // Update is called once per frame

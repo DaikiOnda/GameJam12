@@ -33,7 +33,7 @@ public class Benefit : MonoBehaviour
         }
     }
     void OnDisable() {
-        GManager.instance.budget=GManager.instance.budget+GManager.instance.profit*(4-black.BlackCo)-GManager.instance.loss*black.BlackCo;
+        GManager.instance.budget=GManager.instance.budget+(GManager.instance.profit*(10+GManager.instance.plus)/10)*(4-black.BlackCo)-GManager.instance.loss*black.BlackCo;
         black.AfterresultReset=true;
 	}
 }

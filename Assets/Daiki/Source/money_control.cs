@@ -22,6 +22,7 @@ public class money_control : MonoBehaviour
         company_num=int.Parse(company)-1;
         GManager.instance.budget=GManager.instance.budget-GManager.instance.company_reaction[company_num,0];
         panel.SetActive(false);
+        GManager.instance.plus=GManager.instance.plus+GManager.instance.scale[GManager.instance.create_req];
         GManager.instance.request_go=false;
         searchreply.Waittime=false;
         GManager.instance.request+=1;
