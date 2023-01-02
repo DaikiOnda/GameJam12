@@ -30,6 +30,6 @@ public class Result_money : MonoBehaviour
     void Update()
     {
         if(BoW)moneyText.text = (GManager.instance.profit*(10+GManager.instance.plus)/10)*(4-black.BlackCo)+"万増加";
-        else moneyText.text = GManager.instance.loss*black.BlackCo+"万減少";
+        else moneyText.text = (GManager.instance.loss*(20+GManager.instance.plus)/20)*black.BlackCo+"万減少";
     }
 }
