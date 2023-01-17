@@ -1,0 +1,103 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Next : MonoBehaviour
+{
+    public GameObject  benefit;
+    public GameObject black;
+    public GameObject searcher;
+    public GameObject alarmD;
+    public GameObject result;
+    private bool flag=false;
+    ProductBlackco produckblackco;
+    Searchreply searchreply;
+    public AudioClip sound1;
+    AudioSource audioSource;
+    public  GetClickedGameObject    get;
+    //BlackC blackC;
+    void Start () {
+        produckblackco = black.GetComponent<ProductBlackco>();
+        searchreply = searcher.GetComponent<Searchreply>();
+        audioSource = GetComponent<AudioSource>();
+    }
+    void Update()
+    {
+        
+        if(((GManager.instance.request_go)||(GManager.instance.turn==2)||(GManager.instance.turn==3))&&(GManager.instance.company_name!="未選択")){
+            searchreply.Searchbool=true;
+        }
+        else{
+            searchreply.Searchbool=false;
+        }
+        if(((GManager.instance.time)%12==0)&&flag){
+            produckblackco.Duringproduct=31;
+            flag=false;
+            if((GManager.instance.time)%24==0){
+                GManager.instance.year++;
+                produckblackco.Days=400;
+            }
+        }
+        else if((GManager.instance.time)%12!=0) flag=true;
+    }
+    //ボタンを押すと次のターンに
+    public void GoNextTurn()
+    {
+        if(GManager.instance.request_go){
+            GManager.instance.alart=true;
+            alarmD.SetActive(true);
+        }
+        else{
+            GManager.instance.request=0;
+            GManager.instance.create_req=0;
+            GManager.instance.watch=0;
+            searchreply.Searchbool=false;
+            searchreply.panel.SetActive(false);
+            //searchreply.reaction.SetActive(false);
+            searchreply.Waittime=false;
+            get.Waittime=false;
+            GManager.instance.turn=(GManager.instance.turn+1)%4;
+            result.SetActive(false);
+            benefit.SetActive(false);
+            if(GManager.instance.turn!=2){
+                if(GManager.instance.turn==0){
+                    GManager.instance.time=(GManager.instance.time+1)%24;
+                    //毎月1日に利益の獲得
+                    if(GManager.instance.time%2==0){
+                        audioSource.PlayOneShot(sound1);
+                        benefit.SetActive(true);
+                        //GManager.instance.budget+=(GManager.instance.profit-GManager.instance.loss);
+                    }
+                    else    GManager.instance.turn=(GManager.instance.turn+1)%4;
+                }
+                //searchreply.Searchbool=false;
+            }
+        }
+
+    }
+    //ボタンを押すと半月後に
+    public void GoNextTime()
+    {
+        if(GManager.instance.request_go){
+            GManager.instance.alart=true;
+            alarmD.SetActive(true);
+        }
+        else{
+            GManager.instance.request=0;
+            GManager.instance.watch=0;
+            GManager.instance.turn=0;
+            GManager.instance.time=(GManager.instance.time+1)%24;
+            //毎月1日に利益の獲得
+            if(GManager.instance.time%2==0){
+                result.SetActive(false);
+                audioSource.PlayOneShot(sound1);
+                benefit.SetActive(true);
+                //GManager.instance.budget+=(GManager.instance.profit-GManager.instance.loss);
+            }
+            else{
+                GManager.instance.turn=(GManager.instance.turn+1)%4;
+                benefit.SetActive(false);
+            }    
+        }
+    }
+}
